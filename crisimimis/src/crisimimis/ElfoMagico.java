@@ -9,5 +9,10 @@ package crisimimis;
  * @author caibugatti.ruben
  */
 public class ElfoMagico extends Elfo {
+    int[] s=new int[]{10,4,2,0,2};
+    public ElfoMagico(int[] s){
+        super("Cesare",s,"Ci vuole un po di colore <3");
+    }
+    
     
 }

@@ -9,5 +9,14 @@ package crisimimis;
  * @author caibugatti.ruben
  */
 public class CatenaDiMontaggio {
+    Materiale materiale;
     
+    public CatenaDiMontaggio(){
+        
+    }
+    
+    public Materiale mat(Object m){
+        return (Materiale)m;
+    }
+  
 }
