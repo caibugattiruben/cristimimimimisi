@@ -33,32 +33,36 @@ public class CatenaDiMontaggio {
     public String getNome(){
         return materiale.name();
     } 
-    public String creoELFO(String e){
+    public String creoElfo(String e){
         switch (e) {
             case "ELFO PROGETTATORE":
                 if(!elfi.contains(eProg)){
                     elfi.add(eProg);
-//                    coll="/crisimimis/Immagini/lleshiProgettatore.png";
+                    coll="/crisimimis/Immagini/lleshiProgettatore.png";
                 }
                 break;
             case "ELFO ASSEMBLATORE":
                 if(!elfi.contains(eAss)){
                     elfi.add(eAss);
+                    coll="/crisimimis/Immagini/trivellaAssemblatore.png";
                 }
                 break;
             case "ELFO NEIVCARTORE":
                 if(!elfi.contains(eNev)){
                     elfi.add(eNev);
+                    coll="/crisimimis/Immagini/IO.png";
                 }
                 break;
             case "ELFO MAGICO":
                 if(!elfi.contains(eMag)){
                     elfi.add(eMag);
+                    coll="/crisimimis/Immagini/cessiMagico.png";
                 }
                 break;
             case "ELFO CONTROLLORE":
                 if(!elfi.contains(eCon)){
                     elfi.add(eCon);
+                    coll="/crisimimis/Immagini/altrotipoControllore.png";
                 }
                 break;
         }
