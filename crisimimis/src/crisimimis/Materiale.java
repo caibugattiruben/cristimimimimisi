@@ -14,4 +14,20 @@ public enum Materiale {
     FERRO,
     CRISTALLODINEVE,
     FRAMMENTOMAGICO;
+    
+    public static Materiale tipoMat(String m){
+        switch (m){
+            case "PLASTICA":
+                    return PLASTICA;
+            case "LEGNO":
+                    return LEGNO;
+            case "FERRO":
+                    return FERRO;
+            case "CRISTALLODINEVE":
+                    return CRISTALLODINEVE;
+            case "FRAMMENTOMAGICO":
+                    return FRAMMENTOMAGICO;
+        }
+        return PLASTICA;
+    }
 }

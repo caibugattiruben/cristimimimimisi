@@ -9,10 +9,24 @@ package crisimimis;
  * @author caibugatti.ruben
  */
 public class ElfoMagico extends Elfo {
-    int[] s=new int[]{10,4,2,0,2};
-    public ElfoMagico(int[] s){
-        super("Cesare",s,"Ci vuole un po di colore <3");
+    public ElfoMagico(){
+        super("Cesare","Ci vuole un po di colore <3");
     }
     
+    public int Magia(Materiale m,boolean mac){
+        if(m==Materiale.FRAMMENTOMAGICO){
+            
+            if(mac==true){
+                return 25;
+            }
+            else{
+                return 10;
+            }
+            
+        }
+        else{
+            return 0;
+        }
+    }
     
 }

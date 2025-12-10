@@ -9,10 +9,48 @@ package crisimimis;
  * @author caibugatti.ruben
  */
 public class ElfoProgettatore extends Elfo {
-    int[] s=new int[]{3,2,1,10,2};
-    public ElfoProgettatore(int[] s){
-        super("Lleshi",s,"yo soy Marlon");
+    
+    public ElfoProgettatore(){
+        super("Lleshi","yo soy Marlon");
     }
     
-    
+    public int Progetta(Materiale m,boolean mac){
+        if(m==Materiale.FRAMMENTOMAGICO){
+            
+            if(mac==true){
+                return 25;
+            }
+            else{
+                return 10;
+            }
+            
+        }
+        else if(m==Materiale.CRISTALLODINEVE){
+            if(mac==true){
+                return 20;
+            }
+            else{
+                return 5;
+            }
+        }
+        else if(m==Materiale.FERRO){
+            if(mac==true){
+                return 15;
+            }
+            else{
+                return 5;
+            }
+        }
+        else if(m==Materiale.LEGNO){
+            if(mac==true){
+                return 10;
+            }
+            else{
+                return 5;
+            }
+        }
+        else{
+            return 0;
+        }
+    }
 }

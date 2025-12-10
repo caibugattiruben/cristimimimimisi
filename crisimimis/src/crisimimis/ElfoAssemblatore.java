@@ -9,10 +9,23 @@ package crisimimis;
  * @author caibugatti.ruben
  */
 public class ElfoAssemblatore extends Elfo {
-    int[] s=new int[]{1,2,2,0,10};
-    public ElfoAssemblatore(int[] s){
-        super("Trivella",s,"IGL");
+    public ElfoAssemblatore(){
+        super("Trivella","IGL");
     }
     
-    
+    public int Assembla(Materiale m,boolean mac){
+        if(m==Materiale.PLASTICA){
+            
+            if(mac==true){
+                return 15;
+            }
+            else{
+                return 5;
+            }
+            
+        }
+        else{
+            return 25;
+        }
+    }
 }

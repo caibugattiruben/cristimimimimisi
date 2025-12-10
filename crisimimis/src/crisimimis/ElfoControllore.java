@@ -9,10 +9,22 @@ package crisimimis;
  * @author caibugatti.ruben
  */
 public class ElfoControllore extends Elfo {
-    int[] s=new int[]{0,0,8,0,0};
-    public ElfoControllore(int[] s){
-        super("Twixi",s,"Lasciatemi andare in pensione...");
+    
+    public ElfoControllore(){
+        super("Twixi","Lasciatemi andare in pensione...");
     }
     
-    
+    public int Controlla(int n){
+        switch (n){
+            case 1:
+                return 0;
+            case 2:
+                return 2;
+            case 3:
+                return 10;
+            case 4:
+                return 15;
+        }
+        return 0;
+    }
 }

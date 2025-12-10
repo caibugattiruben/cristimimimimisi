@@ -9,10 +9,31 @@ package crisimimis;
  * @author caibugatti.ruben
  */
 public class ElfoNevicatore extends Elfo {
-    int[] s=new int[]{4,10,4,7,4};
-    public ElfoNevicatore(int[] s){
-        super("Ruben",s,"ER CONSIGLIO:\n-1 lleshi\n-2 Trivella\n-3 io\n-4 Cesare\nCome materiale usa frammento magico e associa bene i macchinari");
+    public ElfoNevicatore(){
+        super("Ruben","ER CONSIGLIO:\n-1 lleshi\n-2 Trivella\n-3 io\n-4 Cesare\nCome materiale usa frammento magico e associa bene i macchinari");
     }
     
-   
+    public int Nevica(Materiale m,boolean mac){
+        if(m==Materiale.FRAMMENTOMAGICO){
+            
+            if(mac==true){
+                return 25;
+            }
+            else{
+                return 10;
+            }
+            
+        }
+        else if(m==Materiale.CRISTALLODINEVE){
+            if(mac==true){
+                return 20;
+            }
+            else{
+                return 5;
+            }
+        }
+        else{
+            return 0;
+        }
+    }
 }

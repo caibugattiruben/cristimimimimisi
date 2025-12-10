@@ -11,14 +11,10 @@ package crisimimis;
 public class Elfo {
     
     private String nome;
-    int[] specialità=new int[5];
     protected String special;
     
-    public Elfo(String n,int[] s,String spe){
+    public Elfo(String n,String spe){
         this.nome=n;
-        for(int i=0;i<5;i++){
-            this.specialità[i]=s[i];
-        }
         this.special=spe;
     }
     
