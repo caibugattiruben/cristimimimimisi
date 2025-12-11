@@ -52,11 +52,14 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -67,8 +70,6 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/Immagine 2025-12-02 130217.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 10, -1, 310));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruben\\Desktop\\progettiJava\\INFORMATICA\\cristimimimimisi\\crisimimis\\src\\crisimimis\\Immagini\\Immagine_2025-12-02_131258-removebg-preview.png")); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 580, 305, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PLASTICA", "LEGNO", "FERRO", "CRISTALLODINEVE", "FRAMMENTOMAGICO" }));
@@ -124,20 +125,31 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel10.setText("jLabel10");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(535, 324, -1, -1));
 
-        jLabel11.setText("TOTALE QUALITA' GIOCO:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 324, -1, -1));
-
         jLabel12.setText("i");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 50, -1, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 50, 80, -1));
 
         jLabel13.setText("i");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 100, 100, 90));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 120, 100, 90));
 
         jLabel14.setText("i");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 270, 100, 160));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 380, 100, 160));
 
         jLabel15.setText("i");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 300, 100, 160));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/rulli.png"))); // NOI18N
+        jLabel16.setText("jLabel16");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 100, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/Immagine_2025-12-02_131258-removebg-preview.png"))); // NOI18N
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 610, -1, -1));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/rulli.png"))); // NOI18N
+        jLabel17.setText("jLabel17");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, 100, -1));
+
+        jLabel19.setText("QUESTA E' LA QUALITA' DEL GIOCO");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -158,13 +170,17 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         for (Elfo elfo : catena.elfi) {
             if (elfo instanceof ElfoProgettatore) {
                 ris+=((ElfoProgettatore) elfo).Progetta(catena.materiale,true);
-            } else if (elfo instanceof ElfoAssemblatore) {
+            } 
+            else if (elfo instanceof ElfoAssemblatore) {
                 ris+=((ElfoAssemblatore) elfo).Assembla(catena.materiale,true);
-            } else if (elfo instanceof ElfoNevicatore) {
+            } 
+            else if (elfo instanceof ElfoNevicatore) {
                 ris+=((ElfoNevicatore) elfo).Nevica(catena.materiale,true);
-            } else if (elfo instanceof ElfoMagico) {
+            } 
+            else if (elfo instanceof ElfoMagico) {
                 ris+=((ElfoMagico) elfo).Magia(catena.materiale,true);
-            } else if (elfo instanceof ElfoControllore) {
+            } 
+            else if (elfo instanceof ElfoControllore) {
                 ris+=((ElfoControllore) elfo).Controlla(catena.elfi.size());
             }
         }
@@ -206,11 +222,14 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
