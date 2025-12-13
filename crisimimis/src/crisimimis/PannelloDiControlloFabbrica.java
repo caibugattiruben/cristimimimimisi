@@ -4,9 +4,12 @@
  */
 package crisimimis;
 
+
+import java.awt.Dimension;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.Timer;
 
 /**
  *
@@ -19,12 +22,38 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     /**
      * Creates new form pannelloDiControlloFabbrica
      */
+    CatenaDiMontaggio catena=new CatenaDiMontaggio();
+    Timer t;
+    String pacco;
+    
     public PannelloDiControlloFabbrica() {
+      
 
         initComponents();
+        jTextField1.setPreferredSize(new Dimension(64, 22));
+        jLabel22.setBounds(870, 20, 100, 30);
+
+        int[] x = {0}; 
+        
+        t = new Timer(10, e -> {
+
+            if(jLabel22.getY()==670){
+                jLabel22.setIcon(null);
+                jLabel22.setLocation(870, 20);
+                jLabel24.setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
+                x[0]=20;
+                t.stop();
+            }
+            else{
+                x[0] += 1;
+                jLabel22.setLocation(870, x[0]);
+            }
+            
+        });
+        
         
     }
-    CatenaDiMontaggio catena=new CatenaDiMontaggio();
+
     public int i=0;
 
     /**
@@ -36,6 +65,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel23 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -57,14 +87,18 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+
+        jLabel23.setText("jLabel23");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -90,7 +124,9 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 478, -1, -1));
+
+        jLabel5.setText("SCEGLI IL TIPO DI MATERIALE");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, -1, -1));
 
         jLabel6.setText("MATERIALE SCELTO:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, 20));
@@ -98,7 +134,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel7.setText("SCEGLI GLI ELFI");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 91, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ELFO PROGETTATORE", "ELFO ASSEMBLATORE", "ELFO NEIVCARTORE", "ELFO MAGICO", "ELFO CONTROLLORE" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ELFO PROGETTATORE", "ELFO ASSEMBLATORE", "ELFO NEVICATORE", "ELFO MAGICO", "ELFO CONTROLLORE" }));
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 204, -1));
 
         jButton2.setText("SCEGLI");
@@ -142,12 +178,15 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel15.setText("i");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 340, 100, 160));
 
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/Immagine_2025-12-02_131258-removebg-preview.png"))); // NOI18N
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 610, -1, -1));
+
+        jLabel22.setText("jLabel22");
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 10, -1, -1));
+
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/rulli.png"))); // NOI18N
         jLabel16.setText("jLabel16");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 100, -1));
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/Immagine_2025-12-02_131258-removebg-preview.png"))); // NOI18N
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 610, -1, -1));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, -90, 100, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/rulli.png"))); // NOI18N
         jLabel17.setText("jLabel17");
@@ -166,18 +205,28 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
 
+        jLabel24.setText("jLabel24");
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         catena.mat((String)jComboBox1.getSelectedItem());
-        jLabel5.setText(catena.getNome());
+        jLabel5.setText(catena.getNomeMat());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JLabel[] label={jLabel12,jLabel13,jLabel14,jLabel15};
-        label[i].setIcon(new ImageIcon((URL)getClass().getResource(catena.creoElfo((String) jComboBox2.getSelectedItem()))));
-        i++;
+        String cod=catena.creoElfo((String) jComboBox2.getSelectedItem());
+        if(cod!=""){
+           if(i<4){
+                label[i].setIcon(new ImageIcon((URL)getClass().getResource(cod)));
+                i++;
+            } 
+        }
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -200,6 +249,11 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
             }
         }
         catena.creoGioco(ris,jTextField1.getText());
+        this.pacco=catena.sceltaPacco();
+        jLabel22.setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
+        t.start();
+        
+        
         jLabel10.setText(String.valueOf(ris));
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -250,6 +304,9 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

@@ -14,13 +14,7 @@ import java.util.ArrayList;
 public class CatenaDiMontaggio {
     Materiale materiale;
     ArrayList<Elfo> elfi=new ArrayList();
-
-    ElfoProgettatore eProg=new ElfoProgettatore();
-    ElfoAssemblatore eAss=new ElfoAssemblatore();
-    ElfoNevicatore eNev=new ElfoNevicatore();
-    ElfoMagico eMag=new ElfoMagico();
-    ElfoControllore eCon=new ElfoControllore();
-    
+    Giocattolo g;
     private String coll;
     
     public CatenaDiMontaggio(){
@@ -30,47 +24,87 @@ public class CatenaDiMontaggio {
     public void mat(String m){
         materiale=Materiale.tipoMat(m);
     }
-    public String getNome(){
+    public String getNomeMat(){
         return materiale.name();
     } 
-    public String creoElfo(String e){
+    public String creoElfo(String e) {
+        boolean presente = false;
+        coll="";
         switch (e) {
             case "ELFO PROGETTATORE":
-                if(!elfi.contains(eProg)){
-                    elfi.add(eProg);
-                    coll="/crisimimis/Immagini/lleshiProgettatore.png";
+                for (Elfo elf : elfi) {
+                    if (elf instanceof ElfoProgettatore) {
+                        presente = true;
+                        break;
+                    }
+                }
+                if (presente==false) {
+                    elfi.add(new ElfoProgettatore());
+                    coll = "/crisimimis/Immagini/lleshiProgettatore.png";
                 }
                 break;
+
             case "ELFO ASSEMBLATORE":
-                if(!elfi.contains(eAss)){
-                    elfi.add(eAss);
-                    coll="/crisimimis/Immagini/trivellaAssemblatore.png";
+                for (Elfo elf : elfi) {
+                    if (elf instanceof ElfoAssemblatore) {
+                        presente = true;
+                        break;
+                    }
+                }
+                if (presente==false) {
+                    elfi.add(new ElfoAssemblatore());
+                    coll = "/crisimimis/Immagini/trivellaAssemblatore.png";
                 }
                 break;
-            case "ELFO NEIVCARTORE":
-                if(!elfi.contains(eNev)){
-                    elfi.add(eNev);
-                    coll="/crisimimis/Immagini/IO.png";
+
+            case "ELFO NEVICATORE":
+                for (Elfo elf : elfi) {
+                    if (elf instanceof ElfoNevicatore) {
+                        presente = true;
+                        break;
+                    }
+                }
+                if (presente==false) {
+                    elfi.add(new ElfoNevicatore());
+                    coll = "/crisimimis/Immagini/IO.png";
                 }
                 break;
+
             case "ELFO MAGICO":
-                if(!elfi.contains(eMag)){
-                    elfi.add(eMag);
-                    coll="/crisimimis/Immagini/cessiMagico.png";
+                for (Elfo elf : elfi) {
+                    if (elf instanceof ElfoMagico) {
+                        presente = true;
+                        break;
+                    }
+                }
+                if (presente==false) {
+                    elfi.add(new ElfoMagico());
+                    coll = "/crisimimis/Immagini/cessiMagico.png";
                 }
                 break;
+
             case "ELFO CONTROLLORE":
-                if(!elfi.contains(eCon)){
-                    elfi.add(eCon);
-                    coll="/crisimimis/Immagini/altrotipoControllore.png";
+                for (Elfo elf : elfi) {
+                    if (elf instanceof ElfoControllore) {
+                        presente = true;
+                        break;
+                    }
+                }
+                if (presente==false) {
+                    elfi.add(new ElfoControllore());
+                    coll = "/crisimimis/Immagini/altrotipoControllore.png";
                 }
                 break;
         }
+
         return coll;
-    }
+}
     public Giocattolo creoGioco(int q,String n){
-        Giocattolo g=new Giocattolo(q,n,materiale);
+        g=new Giocattolo(q,n,materiale);
         return g;
+    }
+    public String sceltaPacco(){
+        return g.sceltaPacco();
     }
     
 }
