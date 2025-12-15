@@ -55,6 +55,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     }
 
     public int i=0;
+    public int e=0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -97,6 +98,10 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
 
         jLabel23.setText("jLabel23");
 
@@ -148,11 +153,16 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel8.setText("SCEGLI I MACCHINARI");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 120, -1, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 117, -1, -1));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MACCHINARIO PROGETTATORE", "MACCHINARIO ASSEMBLATORE", "MACCHINARIO NEVICATORE", "MACCHINARIO MAGICO", "MACCHINARIO CONTROLLORE" }));
+        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
 
         jButton3.setText("SCEGLI");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 117, -1, -1));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, -1, -1));
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1461, 49, -1, -1));
 
         jButton4.setText("MONTA IL GIOCO");
@@ -167,13 +177,13 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, -1));
 
         jLabel12.setText("i");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 80, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 80, -1));
 
         jLabel13.setText("i");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 110, 100, 90));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 110, 60, 90));
 
         jLabel14.setText("i");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 100, 160));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, 100, 160));
 
         jLabel15.setText("i");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 340, 100, 160));
@@ -208,6 +218,18 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel24.setText("jLabel24");
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, -1, -1));
 
+        jLabel25.setText("i");
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, -1, -1));
+
+        jLabel26.setText("i");
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 140, -1, -1));
+
+        jLabel27.setText("i");
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, -1, -1));
+
+        jLabel28.setText("jLabel28");
+        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 410, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -217,6 +239,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
         JLabel[] label={jLabel12,jLabel13,jLabel14,jLabel15};
         String cod=catena.creoElfo((String) jComboBox2.getSelectedItem());
         if(cod!=""){
@@ -256,6 +279,18 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         
         jLabel10.setText(String.valueOf(ris));
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        JLabel[] label={jLabel25,jLabel26,jLabel27,jLabel28};
+        String cod=catena.creoMacchinario((String) jComboBox3.getSelectedItem());
+        if(cod!=""){
+           if(e<4){
+                label[e].setIcon(new ImageIcon((URL)getClass().getResource(cod)));
+                e++;
+            } 
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -307,6 +342,10 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

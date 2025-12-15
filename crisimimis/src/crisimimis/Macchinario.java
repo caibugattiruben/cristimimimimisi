@@ -9,5 +9,9 @@ package crisimimis;
  * @author caibugatti.ruben
  */
 public class Macchinario {
-    
+     private String nome;
+     
+     public Macchinario(String n){
+         this.nome=n;
+     }
 }

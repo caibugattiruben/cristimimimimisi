@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class CatenaDiMontaggio {
     Materiale materiale;
     ArrayList<Elfo> elfi=new ArrayList();
+    ArrayList<Macchinario> macchinari=new ArrayList();
     Giocattolo g;
     private String coll;
     
@@ -92,6 +93,78 @@ public class CatenaDiMontaggio {
                 }
                 if (presente==false) {
                     elfi.add(new ElfoControllore());
+                    coll = "/crisimimis/Immagini/altrotipoControllore.png";
+                }
+                break;
+        }
+
+        return coll;
+}
+    public String creoMacchinario (String e) {
+        boolean presente = false;
+        coll="";
+        switch (e) {
+            case "MACCHINARIO PROGETTATORE":
+                for (Macchinario mac : macchinari) {
+                    if (mac instanceof MacchinarioProgettatore) {
+                        presente = true;
+                        break;
+                    }
+                }
+                if (presente==false) {
+                    macchinari.add(new MacchinarioProgettatore());
+                    coll = "/crisimimis/Immagini/lleshiProgettatore.png";
+                }
+                break;
+
+            case "MACCHINARIO ASSEMBLATORE":
+                for (Macchinario mac : macchinari) {
+                    if (mac instanceof MacchinarioAssemblatore) {
+                        presente = true;
+                        break;
+                    }
+                }
+                if (presente==false) {
+                    macchinari.add(new MacchinarioAssemblatore());
+                    coll = "/crisimimis/Immagini/trivellaAssemblatore.png";
+                }
+                break;
+
+            case "MACCHINARIO NEVICATORE":
+                for (Macchinario mac : macchinari) {
+                    if (mac instanceof MacchinarioNevicatore) {
+                        presente = true;
+                        break;
+                    }
+                }
+                if (presente==false) {
+                    macchinari.add(new MacchinarioNevicatore());
+                    coll = "/crisimimis/Immagini/IO.png";
+                }
+                break;
+
+            case "MACCHINARIO MAGICO":
+                for (Macchinario mac : macchinari) {
+                    if (mac instanceof MacchinarioMagico) {
+                        presente = true;
+                        break;
+                    }
+                }
+                if (presente==false) {
+                    macchinari.add(new MacchinarioMagico());
+                    coll = "/crisimimis/Immagini/cessiMagico.png";
+                }
+                break;
+
+            case "MACCHINARIO CONTROLLORE":
+                for (Macchinario mac : macchinari) {
+                    if (mac instanceof MacchinarioControllore) {
+                        presente = true;
+                        break;
+                    }
+                }
+                if (presente==false) {
+                    macchinari.add(new MacchinarioControllore());
                     coll = "/crisimimis/Immagini/altrotipoControllore.png";
                 }
                 break;
