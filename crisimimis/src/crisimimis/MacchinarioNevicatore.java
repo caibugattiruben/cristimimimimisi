@@ -12,6 +12,7 @@ public class MacchinarioNevicatore extends Macchinario {
     public MacchinarioNevicatore(){
         super("Nevicatore");
     }
+    
     public int neve(int pos){
         switch (pos){
             case 0:

@@ -13,7 +13,7 @@ public class MacchinarioProgettatore extends Macchinario {
         super("Progettatore");
     }
     
-    public int progetto(int pos){
+     public int progetto(int pos){
         switch (pos){
             case 0:
                 return 25;

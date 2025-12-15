@@ -113,7 +113,7 @@ public class CatenaDiMontaggio {
                 }
                 if (presente==false) {
                     macchinari.add(new MacchinarioProgettatore());
-                    coll = "/crisimimis/Immagini/lleshiProgettatore.png";
+                    coll = "/crisimimis/Immagini/MacchinarioLleshi.png";
                 }
                 break;
 
@@ -126,7 +126,7 @@ public class CatenaDiMontaggio {
                 }
                 if (presente==false) {
                     macchinari.add(new MacchinarioAssemblatore());
-                    coll = "/crisimimis/Immagini/trivellaAssemblatore.png";
+                    coll = "/crisimimis/Immagini/MacchinarioTrive.png";
                 }
                 break;
 
@@ -139,7 +139,7 @@ public class CatenaDiMontaggio {
                 }
                 if (presente==false) {
                     macchinari.add(new MacchinarioNevicatore());
-                    coll = "/crisimimis/Immagini/IO.png";
+                    coll = "/crisimimis/Immagini/MacchinarioIo.png";
                 }
                 break;
 
@@ -152,7 +152,7 @@ public class CatenaDiMontaggio {
                 }
                 if (presente==false) {
                     macchinari.add(new MacchinarioMagico());
-                    coll = "/crisimimis/Immagini/cessiMagico.png";
+                    coll = "/crisimimis/Immagini/MacchinarioCessi.png";
                 }
                 break;
 
@@ -165,7 +165,7 @@ public class CatenaDiMontaggio {
                 }
                 if (presente==false) {
                     macchinari.add(new MacchinarioControllore());
-                    coll = "/crisimimis/Immagini/altrotipoControllore.png";
+                    coll = "/crisimimis/Immagini/MacchinarioTizio.png";
                 }
                 break;
         }

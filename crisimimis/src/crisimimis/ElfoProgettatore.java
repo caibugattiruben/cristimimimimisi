@@ -13,8 +13,7 @@ public class ElfoProgettatore extends Elfo {
     public ElfoProgettatore(){
         super("Lleshi","yo soy Marlon");
     }
-    
-    public int Progetta(Materiale m,boolean mac){
+        public int Progetta(Materiale m,boolean mac){
         if(m==Materiale.FRAMMENTOMAGICO){
             
             if(mac==true){
@@ -53,4 +52,8 @@ public class ElfoProgettatore extends Elfo {
             return 0;
         }
     }
-}
+   
+} 
+
+
+ 

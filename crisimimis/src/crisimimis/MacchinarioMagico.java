@@ -12,7 +12,9 @@ public class MacchinarioMagico extends Macchinario {
     public MacchinarioMagico(){
         super("Magico");
     }
-    public int progetto(int pos){
+    
+    
+    public int magia(int pos){
         switch (pos){
             case 0:
                 return 0;

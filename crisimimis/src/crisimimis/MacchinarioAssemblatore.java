@@ -12,7 +12,7 @@ public class MacchinarioAssemblatore extends Macchinario {
     public MacchinarioAssemblatore(){
         super("Assemblatore");
     }
-    public int progetto(int pos){
+    public int assembla(int pos){
         switch (pos){
             case 0:
                 return 15;

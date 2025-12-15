@@ -13,6 +13,7 @@ public class ElfoNevicatore extends Elfo {
         super("Ruben","ER CONSIGLIO:\n-1 lleshi\n-2 Trivella\n-3 io\n-4 Cesare\nCome materiale usa frammento magico e associa bene i macchinari");
     }
     
+    
     public int Nevica(Materiale m,boolean mac){
         if(m==Materiale.FRAMMENTOMAGICO){
             

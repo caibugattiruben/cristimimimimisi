@@ -14,16 +14,30 @@ public class ElfoControllore extends Elfo {
         super("Twixi","Lasciatemi andare in pensione...");
     }
     
-    public int Controlla(int n){
-        switch (n){
-            case 1:
-                return 0;
-            case 2:
-                return 2;
-            case 3:
-                return 10;
-            case 4:
-                return 15;
+    public int Controlla(int n,boolean m){
+        if(m==true){
+            switch (n){
+                case 1:
+                    return 0;
+                case 2:
+                    return 2;
+                case 3:
+                    return 10;
+                case 4:
+                    return 15;
+                }
+        }
+        else{
+            switch (n){
+                case 1:
+                    return 0;
+                case 2:
+                    return 0;
+                case 3:
+                    return 3;
+                case 4:
+                    return 5;
+                }
         }
         return 0;
     }

@@ -13,6 +13,8 @@ public class ElfoAssemblatore extends Elfo {
         super("Trivella","IGL");
     }
     
+    
+    
     public int Assembla(Materiale m,boolean mac){
         if(m==Materiale.PLASTICA){
             
