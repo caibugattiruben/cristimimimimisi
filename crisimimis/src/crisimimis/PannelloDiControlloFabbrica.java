@@ -27,22 +27,20 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     String pacco;
     public int r=0;
     Giocattolo g;
-    int[] pos={80,190,320,440};
+    int[] pos={80,195,330,450};
+    int[] fermarsi;
     
     public PannelloDiControlloFabbrica() {
       
         initComponents();
-        
+
         jTextArea1.setEditable(false);
         JLabel[] regali={jLabel24,jLabel2,jLabel29};
         jTextField1.setPreferredSize(new Dimension(64, 22));
         jLabel22.setBounds(870, 20, 100, 30);
         JLabel[] label={jLabel12,jLabel13,jLabel14,jLabel15};
         JLabel[] label1={jLabel25,jLabel26,jLabel27,jLabel28};
-        int[] fermarsi=new int[catena.elfi.size()];
-        for(int i=0; i<catena.elfi.size();i++){
-            fermarsi[i]=pos[i];
-        }
+        
         
         int[] x = {0}; 
         
@@ -77,10 +75,11 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 for(int i=0;i<fermarsi.length;i++){
                     if(jLabel22.getY()==fermarsi[i]){
                         t.stop();
+                        
                         Timer pausa = new Timer(1000, a -> {t.start();});
                         pausa.setRepeats(false);
                         pausa.start();
-                        t.start();
+
                     }
                 }
                 
@@ -277,9 +276,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
            if(i<4){
                 label[i].setIcon(new ImageIcon((URL)getClass().getResource(cod)));
                 i++;
-            } 
-           
-           
+            }    
         }
         
         
@@ -288,6 +285,10 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
+        fermarsi=new int[catena.elfi.size()];
+        for(int i=0; i<catena.elfi.size();i++){
+            fermarsi[i]=pos[i];
+        }
         int ris=0; 
         boolean ok=false;
         for (Elfo elfo : catena.elfi) {
