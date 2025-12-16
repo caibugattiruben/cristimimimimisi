@@ -36,6 +36,6 @@ public class Giocattolo {
     
     @Override
     public String toString(){
-        return "Questo giocattolo e "+nome+" il suo materiale e"+mat+" la sua qualita e "+qualità;
+        return "Giocattolo di nome: "+nome+", il suo materiale e' "+mat+", la sua qualita e "+qualità;
     }
 }

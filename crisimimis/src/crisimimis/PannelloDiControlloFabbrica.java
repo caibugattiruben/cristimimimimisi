@@ -25,14 +25,25 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     CatenaDiMontaggio catena=new CatenaDiMontaggio();
     Timer t;
     String pacco;
+    public int r=0;
+    Giocattolo g;
+    int[] pos={80,190,320,440};
     
     public PannelloDiControlloFabbrica() {
       
-
         initComponents();
+        
+        jTextArea1.setEditable(false);
+        JLabel[] regali={jLabel24,jLabel2,jLabel29};
         jTextField1.setPreferredSize(new Dimension(64, 22));
         jLabel22.setBounds(870, 20, 100, 30);
-
+        JLabel[] label={jLabel12,jLabel13,jLabel14,jLabel15};
+        JLabel[] label1={jLabel25,jLabel26,jLabel27,jLabel28};
+        int[] fermarsi=new int[catena.elfi.size()];
+        for(int i=0; i<catena.elfi.size();i++){
+            fermarsi[i]=pos[i];
+        }
+        
         int[] x = {0}; 
         
         t = new Timer(10, e -> {
@@ -40,14 +51,43 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
             if(jLabel22.getY()==670){
                 jLabel22.setIcon(null);
                 jLabel22.setLocation(870, 20);
-                jLabel24.setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
+                regali[r].setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
                 x[0]=20;
                 t.stop();
+                r++;
+                jTextArea1.append(g.toString()+"\n");
+                
+                jButton1.setEnabled(true);
+                jButton2.setEnabled(true);
+                jButton3.setEnabled(true);
+                catena.pulisciElfi();
+                catena.pulisciMacchinari();
+                for(JLabel j:label){
+                    j.setIcon(null);
+                }
+                for(JLabel j:label1){
+                    j.setIcon(null);
+                }
+                i=0;
+                p=0;
+                jLabel10.setText("");
+                jTextField1.setText("");
             }
             else{
+                for(int i=0;i<fermarsi.length;i++){
+                    if(jLabel22.getY()==fermarsi[i]){
+                        t.stop();
+                        Timer pausa = new Timer(1000, a -> {t.start();});
+                        pausa.setRepeats(false);
+                        pausa.start();
+                        t.start();
+                    }
+                }
+                
                 x[0] += 1;
                 jLabel22.setLocation(870, x[0]);
             }
+            
             
         });
         
@@ -55,7 +95,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     }
 
     public int i=0;
-    public int e=0;
+    public int p=0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -101,6 +141,11 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         jLabel23.setText("jLabel23");
 
@@ -127,7 +172,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
 
         jLabel5.setText("SCEGLI IL TIPO DI MATERIALE");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
 
         jLabel6.setText("MATERIALE SCELTO:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, 20));
@@ -168,16 +213,14 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
-
-        jLabel10.setText("jLabel10");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 60, 20));
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 80, 90));
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 190, 60, 90));
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, 70, 110));
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 440, 60, 110));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/Immagine_2025-12-02_131258-removebg-preview.png"))); // NOI18N
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 610, -1, -1));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(715, 610, 320, -1));
         getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 10, 70, 70));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/rulli.png"))); // NOI18N
@@ -200,13 +243,22 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel21.setText("NOME DEL GIOCATTOLO:");
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
-
-        jLabel24.setText("jLabel24");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, -1, -1));
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 570, 70, 60));
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 80, 70, 90));
         getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 190, 70, 90));
         getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 320, 70, 110));
         getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 440, 70, 110));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 570, 70, 60));
+        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 520, 80, 80));
+
+        jLabel30.setText("GIOCATTOLI GIA FATTI");
+        getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, -1, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 410, 240));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -214,6 +266,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         catena.mat((String)jComboBox1.getSelectedItem());
         jLabel5.setText(catena.getNomeMat());
+        jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -225,12 +278,16 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 label[i].setIcon(new ImageIcon((URL)getClass().getResource(cod)));
                 i++;
             } 
+           
+           
         }
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
         int ris=0; 
         boolean ok=false;
         for (Elfo elfo : catena.elfi) {
@@ -282,7 +339,8 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 ris+=((MacchinarioControllore) mac).controllo(catena.macchinari.indexOf(mac));
             }
         }
-        catena.creoGioco(ris,jTextField1.getText());
+        
+        g=catena.creoGioco(ris,jTextField1.getText());
         this.pacco=catena.sceltaPacco();
         jLabel22.setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
         t.start();
@@ -296,9 +354,9 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         JLabel[] label={jLabel25,jLabel26,jLabel27,jLabel28};
         String cod=catena.creoMacchinario((String) jComboBox3.getSelectedItem());
         if(cod!=""){
-           if(e<4){
-                label[e].setIcon(new ImageIcon((URL)getClass().getResource(cod)));
-                e++;
+           if(p<4){
+                label[p].setIcon(new ImageIcon((URL)getClass().getResource(cod)));
+                p++;
             } 
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -347,6 +405,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -356,13 +415,17 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

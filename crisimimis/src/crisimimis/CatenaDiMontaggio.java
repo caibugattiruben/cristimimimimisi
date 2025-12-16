@@ -179,5 +179,11 @@ public class CatenaDiMontaggio {
     public String sceltaPacco(){
         return g.sceltaPacco();
     }
+    public void pulisciElfi(){
+        elfi.clear();
+    }
+    public void pulisciMacchinari(){
+        macchinari.clear();
+    }
     
 }
