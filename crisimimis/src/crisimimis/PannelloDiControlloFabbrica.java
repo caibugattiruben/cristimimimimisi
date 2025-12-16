@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
@@ -106,6 +107,8 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel23 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -145,8 +148,13 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton5 = new javax.swing.JButton();
 
         jLabel23.setText("jLabel23");
+
+        jToggleButton1.setText("jToggleButton1");
+
+        jToggleButton2.setText("jToggleButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -259,6 +267,14 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 410, 240));
 
+        jButton5.setText("ISTRUZIONI");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 40, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -362,6 +378,23 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        JOptionPane.showMessageDialog(
+            null,
+            "La fabbrica di Babbo Natale è composta da quattro postazioni di lavoro,\n" +
+            "ognuna pronta ad accogliere un solo elfo alla volta.\n" +
+            "Ogni elfo ha un nome tutto suo, lavora con un materiale specifico\n" +
+            "e può utilizzare un macchinario per creare i giocattoli.\n" +
+            "Tuttavia, ogni elfo ha anche un macchinario preferito:\n" +
+            "quando lavora con quello giusto, diventa più veloce, preciso\n" +
+            "e la magia del Natale si sente di più!\n" +
+            "Combinando nel modo migliore elfi, materiali e macchinari,\n" +
+            "la fabbrica riesce a produrre splendidi giochi\n" +
+            "da consegnare a Babbo Natale per rendere felici tutti i bambini 🎁✨",
+            "FABBRICA DI BABBO NATALE",
+            JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -392,6 +425,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -428,5 +462,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
     // End of variables declaration//GEN-END:variables
 }
