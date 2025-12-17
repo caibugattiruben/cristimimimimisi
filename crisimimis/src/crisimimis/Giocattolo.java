@@ -10,7 +10,7 @@ import java.util.Random;
  * @author caibugatti.ruben
  */
 public class Giocattolo {
-    private int qualità;
+    protected int qualità;
     private String nome;
     private Materiale mat;
     Random rdn=new Random();

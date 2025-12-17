@@ -50,7 +50,10 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
             if(jLabel22.getY()==670){
                 jLabel22.setIcon(null);
                 jLabel22.setLocation(870, 20);
-                regali[r].setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
+                if(r<3){
+                    regali[r].setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
+                }
+                
                 x[0]=20;
                 t.stop();
                 r++;
@@ -76,11 +79,11 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 for(int i=0;i<fermarsi.length;i++){
                     if(jLabel22.getY()==fermarsi[i]){
                         t.stop();
-                        
+                        jLabel22.setIcon(new ImageIcon((URL)getClass().getResource("/crisimimis/Immagini/workReagali.png")));
                         Timer pausa = new Timer(1000, a -> {t.start();});
                         pausa.setRepeats(false);
                         pausa.start();
-
+                        jLabel22.setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
                     }
                 }
                 
@@ -149,6 +152,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         jLabel23.setText("jLabel23");
 
@@ -158,6 +162,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/Immagine 2025-12-02 130217.png"))); // NOI18N
@@ -274,6 +279,14 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 40, -1, -1));
+
+        jButton6.setText("EVENTO CASUALE");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -395,6 +408,10 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
             JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        catena.evento();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -426,6 +443,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;

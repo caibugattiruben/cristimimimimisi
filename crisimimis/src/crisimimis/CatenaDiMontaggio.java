@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class CatenaDiMontaggio {
     Materiale materiale;
+    Eventi e;
     ArrayList<Elfo> elfi=new ArrayList();
     ArrayList<Macchinario> macchinari=new ArrayList();
     Giocattolo g;
@@ -185,5 +186,20 @@ public class CatenaDiMontaggio {
     public void pulisciMacchinari(){
         macchinari.clear();
     }
-    
+    public void evento(){
+        e=e.sceltaEvento();
+        
+        switch (e){
+            case PIETRO_GRINCH:
+                this.pulisciElfi();
+                this.pulisciMacchinari();
+                g.qualità=0;
+            case FESTA:
+                
+            case LA_MI_NONNA:
+                
+            default:
+                ;
+        }
+    }
 }
