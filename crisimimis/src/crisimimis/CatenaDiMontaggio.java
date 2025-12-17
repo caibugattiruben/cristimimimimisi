@@ -7,8 +7,13 @@ package crisimimis;
 import static crisimimis.Eventi.FESTA;
 import static crisimimis.Eventi.LA_MI_NONNA;
 import static crisimimis.Eventi.PIETRO_GRINCH;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 
 
 /**
@@ -22,6 +27,7 @@ public class CatenaDiMontaggio {
     ArrayList<Macchinario> macchinari=new ArrayList();
     Giocattolo g;
     private String coll;
+    private Clip clip;
     
     public CatenaDiMontaggio(){
         
@@ -223,4 +229,22 @@ public class CatenaDiMontaggio {
     public String getNomeEv(){
         return e.name();
     } 
+    public void suono(){
+        try {
+            File soundFile = new File("src/crisimimis/Suono/song.wav");
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundFile);
+
+            clip = AudioSystem.getClip();
+            clip.open(audioStream);
+            
+            FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            volume.setValue(-18.0f); 
+
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+            clip.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }

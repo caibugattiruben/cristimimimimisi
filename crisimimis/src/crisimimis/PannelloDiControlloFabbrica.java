@@ -43,6 +43,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
       
         initComponents();
 
+        catena.suono();
         jButton6.setEnabled(false);
         jButton4.setEnabled(false);
         jTextArea1.setEditable(false);
