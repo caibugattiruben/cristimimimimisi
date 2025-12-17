@@ -14,7 +14,7 @@ public enum Eventi {
     FESTA,
     LA_MI_NONNA;
     
-    public Eventi sceltaEvento(){
+    public static Eventi sceltaEvento(){
         Random rdn=new Random();
         int n=rdn.nextInt(3);
         

@@ -4,7 +4,11 @@
  */
 package crisimimis;
 
+import static crisimimis.Eventi.FESTA;
+import static crisimimis.Eventi.LA_MI_NONNA;
+import static crisimimis.Eventi.PIETRO_GRINCH;
 import java.util.ArrayList;
+import java.util.Random;
 
 
 /**
@@ -186,20 +190,37 @@ public class CatenaDiMontaggio {
     public void pulisciMacchinari(){
         macchinari.clear();
     }
-    public void evento(){
-        e=e.sceltaEvento();
+    public Eventi evento(){
+        e=Eventi.sceltaEvento();
         
         switch (e){
             case PIETRO_GRINCH:
                 this.pulisciElfi();
                 this.pulisciMacchinari();
                 g.qualità=0;
+                return PIETRO_GRINCH;
+                
             case FESTA:
+                Random rdn=new Random();
+                int bueno=rdn.nextInt(10);
+                if(bueno<5){
+                    g.qualità=180;
+                }
+                else{
+                    this.pulisciElfi();
+                    this.pulisciMacchinari();
+                    g.qualità=10;
+                }
+                return FESTA;
                 
             case LA_MI_NONNA:
+                g.qualità=200;
+                return LA_MI_NONNA;
                 
-            default:
-                ;
         }
+        return LA_MI_NONNA;
     }
+    public String getNomeEv(){
+        return e.name();
+    } 
 }

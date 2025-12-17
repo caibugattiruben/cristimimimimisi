@@ -5,6 +5,9 @@
 package crisimimis;
 
 
+import static crisimimis.Eventi.FESTA;
+import static crisimimis.Eventi.LA_MI_NONNA;
+import static crisimimis.Eventi.PIETRO_GRINCH;
 import java.awt.Dimension;
 import java.net.URL;
 import javax.swing.ImageIcon;
@@ -30,12 +33,21 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     Giocattolo g;
     int[] pos={80,195,330,450};
     int[] fermarsi;
+    boolean grinch=false;
+    boolean matScelto=false;
+    boolean elfoScelto=false;
+    boolean post=false;
+    
     
     public PannelloDiControlloFabbrica() {
       
         initComponents();
 
+        jButton6.setEnabled(false);
+        jButton4.setEnabled(false);
         jTextArea1.setEditable(false);
+        jTextArea2.setEditable(false);
+        jTextArea2.setLineWrap(true);
         JLabel[] regali={jLabel24,jLabel2,jLabel29};
         jTextField1.setPreferredSize(new Dimension(64, 22));
         jLabel22.setBounds(870, 20, 100, 30);
@@ -48,17 +60,24 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         t = new Timer(10, e -> {
 
             if(jLabel22.getY()==670){
-                jLabel22.setIcon(null);
-                jLabel22.setLocation(870, 20);
-                if(r<3){
-                    regali[r].setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
+                if(grinch==false){
+                    jLabel22.setIcon(null);
+                    jLabel22.setLocation(870, 20);
+                    if(r<3){
+                        regali[r].setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
+                    }
+                    r++;
+                    jTextArea1.append(g.toString()+"\n");
+                }
+                else{
+                    jTextArea1.append("GIOCATTOLO DISTRUTTO DAL PIETRO GRINCH\n");
+                    grinch=false;
                 }
                 
                 x[0]=20;
                 t.stop();
-                r++;
-                jTextArea1.append(g.toString()+"\n");
                 
+                jTextArea2.setText(null);
                 jButton1.setEnabled(true);
                 jButton2.setEnabled(true);
                 jButton3.setEnabled(true);
@@ -73,17 +92,19 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 i=0;
                 p=0;
                 jLabel10.setText("");
+                jLabel32.setText("");
                 jTextField1.setText("");
+                jLabel33.setIcon(null);
             }
             else{
                 for(int i=0;i<fermarsi.length;i++){
                     if(jLabel22.getY()==fermarsi[i]){
                         t.stop();
-                        jLabel22.setIcon(new ImageIcon((URL)getClass().getResource("/crisimimis/Immagini/workReagali.png")));
+                        
                         Timer pausa = new Timer(1000, a -> {t.start();});
                         pausa.setRepeats(false);
                         pausa.start();
-                        jLabel22.setIcon(new ImageIcon((URL)getClass().getResource(pacco)));
+                        
                     }
                 }
                 
@@ -153,6 +174,11 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jLabel33 = new javax.swing.JLabel();
 
         jLabel23.setText("jLabel23");
 
@@ -162,7 +188,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/Immagine 2025-12-02 130217.png"))); // NOI18N
@@ -254,6 +280,12 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
 
         jLabel21.setText("NOME DEL GIOCATTOLO:");
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 570, 70, 60));
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 80, 70, 90));
@@ -288,6 +320,19 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, -1));
 
+        jLabel31.setText("EVENTO:");
+        getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, -1, -1));
+
+        jLabel32.setText("SCEGLI UN EVENTO");
+        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 540, -1, -1));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, -1, -1));
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 650, 160, 110));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -295,6 +340,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         catena.mat((String)jComboBox1.getSelectedItem());
         jLabel5.setText(catena.getNomeMat());
         jButton1.setEnabled(false);
+        matScelto=true;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -307,13 +353,15 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 i++;
             }    
         }
-        
+        elfoScelto=true;
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         jButton2.setEnabled(false);
+        jButton4.setEnabled(false);
         jButton3.setEnabled(false);
+        jButton6.setEnabled(true);
         fermarsi=new int[catena.elfi.size()];
         for(int i=0; i<catena.elfi.size();i++){
             fermarsi[i]=pos[i];
@@ -389,6 +437,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 p++;
             } 
         }
+        post=true;
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -403,14 +452,69 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
             "e la magia del Natale si sente di più!\n" +
             "Combinando nel modo migliore elfi, materiali e macchinari,\n" +
             "la fabbrica riesce a produrre splendidi giochi\n" +
-            "da consegnare a Babbo Natale per rendere felici tutti i bambini 🎁✨",
+            "da consegnare a Babbo Natale per rendere felici tutti i bambini 🎁✨\n" +
+            "Premendo il tasto Evento, può accadere qualcosa di speciale:\n" +
+            "il Grinch può arrivare e rovinare tutto distruggendo il regalo in corso e i macchinari spaventando gli elfi,\n" +
+            "può esserci una festa che va bene (gli elfi sono felici della pausa) oppure male (si ubriacano tutti e rovinano i giochi),\n" +
+            "oppure arriva la Nonna, che fa regali a tutti\n" +
+            "e rende la giornata ancora più magica 💖🎄\n"+
+            "PS per poter creare il gioco bisogna:\n"+
+            "dover aver scelto il materiale\n"+
+            "dover mettere almeno una postazione di lavoro con elfo e macchinario\n"+
+            "va inserito il suo nome e cliccato invio cosi che il pulsante crea gioco parti",
             "FABBRICA DI BABBO NATALE",
             JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        catena.evento();
+        JLabel[] label={jLabel12,jLabel13,jLabel14,jLabel15};
+        JLabel[] label1={jLabel25,jLabel26,jLabel27,jLabel28};
+        Eventi ev=catena.evento();
+        jTextArea2.setText(null);
+        switch (ev){
+            case PIETRO_GRINCH:
+                for(JLabel j:label){
+                    j.setIcon(null);
+                }
+                for(JLabel j:label1){
+                    j.setIcon(null);
+                }
+                jLabel22.setIcon(null);
+                jTextArea2.setText("IL GRINCH HA DISTRUTTO IL REGALO, HA SPAVENTATO GLI ELFI E DISTRUTTO I MACCHIANARI");
+                grinch=true;
+                jLabel33.setIcon(new ImageIcon((URL)getClass().getResource("/crisimimis/Immagini/pit.png")));
+                
+                
+                break;
+                
+            case FESTA:
+                if(g.qualità==180){
+                    jTextArea2.setText("GLI ELFI FANNO FESTA COME ANDRA'..."+"\nE' ANDATA BENE E SONO CONTENTI DI AVER FATTO FIESTAAA QUALITA' IMPOSTATA A 180");
+                    jLabel33.setIcon(new ImageIcon((URL)getClass().getResource("/crisimimis/Immagini/fiestaFelici.png")));
+                }
+                else{
+                    jTextArea2.setText("GLI ELFI FANNO FESTA COME ANDRA'..."+"\n SI SONO UBRIACATI TUTTI... CHE CASINO QUALITA' IMPOSTATA A 10");
+                    jLabel33.setIcon(new ImageIcon((URL)getClass().getResource("/crisimimis/Immagini/fiestaUbriachi.png")));
+                }
+                break;
+                
+            case LA_MI_NONNA:
+                jTextArea2.setText("E' ARRIVATA LA MI NONNA E HA RESO TUTTI FELICI CON TANTI REGALI QUALITA' IMPOSTATA A 200!!!!");
+                jLabel33.setIcon(new ImageIcon((URL)getClass().getResource("/crisimimis/Immagini/nonna.png")));
+                break;
+                
+        }
+        jLabel32.setText(catena.getNomeEv());
+        jLabel10.setText(""+g.qualità);
+        jButton6.setEnabled(false);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        if(matScelto==true && elfoScelto==true && post==true){
+            jButton4.setEnabled(true);
+        }
+        jButton4.setEnabled(true);
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -471,6 +575,9 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -478,7 +585,9 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
