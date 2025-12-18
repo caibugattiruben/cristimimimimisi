@@ -8,6 +8,7 @@ package crisimimis;
 import static crisimimis.Eventi.FESTA;
 import static crisimimis.Eventi.LA_MI_NONNA;
 import static crisimimis.Eventi.PIETRO_GRINCH;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.net.URL;
 import javax.swing.ImageIcon;
@@ -22,7 +23,7 @@ import javax.swing.Timer;
 public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PannelloDiControlloFabbrica.class.getName());
-
+    
     /**
      * Creates new form pannelloDiControlloFabbrica
      */
@@ -40,7 +41,8 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     
     
     public PannelloDiControlloFabbrica() {
-      
+        Color c=new Color(0,143,57);
+        this.getContentPane().setBackground(c);
         initComponents();
 
         catena.suono();
@@ -180,6 +182,12 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
 
         jLabel23.setText("jLabel23");
 
@@ -197,10 +205,10 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 580, 305, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PLASTICA", "LEGNO", "FERRO", "CRISTALLODINEVE", "FRAMMENTOMAGICO" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
 
         jLabel4.setText("SCEGLI IL MATERIALE DEL TUO GIOCATTOLO");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 62, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jButton1.setText("SCEGLI");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +216,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, -1, -1));
 
         jLabel5.setText("SCEGLI IL TIPO DI MATERIALE");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
@@ -217,10 +225,10 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, 20));
 
         jLabel7.setText("SCEGLI GLI ELFI");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 91, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ELFO PROGETTATORE", "ELFO ASSEMBLATORE", "ELFO NEVICATORE", "ELFO MAGICO", "ELFO CONTROLLORE" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 204, -1));
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 204, -1));
 
         jButton2.setText("SCEGLI");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -228,13 +236,13 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, -1, -1));
 
         jLabel8.setText("SCEGLI I MACCHINARI");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 120, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MACCHINARIO PROGETTATORE", "MACCHINARIO ASSEMBLATORE", "MACCHINARIO NEVICATORE", "MACCHINARIO MAGICO", "MACCHINARIO CONTROLLORE" }));
-        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
 
         jButton3.setText("SCEGLI");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -242,7 +250,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, -1, -1));
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1461, 49, -1, -1));
 
         jButton4.setText("MONTA IL GIOCO");
@@ -252,7 +260,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 60, 20));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 60, 20));
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 80, 90));
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 190, 60, 90));
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, 70, 110));
@@ -274,10 +282,10 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
 
         jLabel11.setText("SCEGLI I MACCHINARI");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 120, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         jLabel20.setText("SCEGLI I MACCHINARI");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 120, -1, -1));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         jLabel21.setText("NOME DEL GIOCATTOLO:");
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
@@ -333,6 +341,26 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, -1, -1));
         getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 650, 160, 110));
+
+        jLabel34.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel34.setText("FABBRICA DI BABBO NATALE");
+        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
+
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/fortnite.png"))); // NOI18N
+        getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 190, 90));
+
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/albero.png"))); // NOI18N
+        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 100, 150));
+
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/calza.png"))); // NOI18N
+        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 100, 190));
+
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/caramella.png"))); // NOI18N
+        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 510, 100, 210));
+
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/ghirlanda.png"))); // NOI18N
+        getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 110, 120));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -579,6 +607,12 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

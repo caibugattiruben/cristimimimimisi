@@ -14,7 +14,7 @@ public class Crisimimis {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         PannelloDiControlloFabbrica p1=new PannelloDiControlloFabbrica();
         p1.setVisible(true);
     }
