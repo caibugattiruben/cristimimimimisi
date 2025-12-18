@@ -10,7 +10,7 @@ package crisimimis;
  */
 public class ElfoNevicatore extends Elfo {
     public ElfoNevicatore(){
-        super("Ruben","ER CONSIGLIO:\n-1 lleshi\n-2 Trivella\n-3 io\n-4 Cesare\nCome materiale usa frammento magico e associa bene i macchinari");
+        super("Ruben");
     }
     
     

@@ -10,7 +10,7 @@ package crisimimis;
  */
 public class ElfoMagico extends Elfo {
     public ElfoMagico(){
-        super("Cesare","Ci vuole un po di colore <3");
+        super("Cesare");
     }
     
     public int Magia(Materiale m,boolean mac){

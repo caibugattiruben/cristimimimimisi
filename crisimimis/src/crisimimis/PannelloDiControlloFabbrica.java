@@ -76,6 +76,8 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                     jTextArea1.append("GIOCATTOLO DISTRUTTO DAL PIETRO GRINCH\n");
                     grinch=false;
                 }
+                jButton6.setEnabled(false);
+                jLabel11.setIcon(null);
                 
                 x[0]=20;
                 t.stop();
@@ -161,8 +163,6 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
@@ -188,6 +188,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         jLabel23.setText("jLabel23");
 
@@ -205,62 +206,79 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 580, 305, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PLASTICA", "LEGNO", "FERRO", "CRISTALLODINEVE", "FRAMMENTOMAGICO" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 210, -1));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("SCEGLI IL MATERIALE DEL TUO GIOCATTOLO");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 250, -1));
 
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("SCEGLI");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setText("SCEGLI IL TIPO DI MATERIALE");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("MATERIALE SCELTO:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, 20));
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("SCEGLI GLI ELFI");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ELFO PROGETTATORE", "ELFO ASSEMBLATORE", "ELFO NEVICATORE", "ELFO MAGICO", "ELFO CONTROLLORE" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 204, -1));
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 210, -1));
 
+        jButton2.setBackground(new java.awt.Color(255, 51, 51));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("SCEGLI");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setText("SCEGLI I MACCHINARI");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MACCHINARIO PROGETTATORE", "MACCHINARIO ASSEMBLATORE", "MACCHINARIO NEVICATORE", "MACCHINARIO MAGICO", "MACCHINARIO CONTROLLORE" }));
-        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
+        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, -1));
 
+        jButton3.setBackground(new java.awt.Color(255, 51, 51));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("SCEGLI");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1461, 49, -1, -1));
 
+        jButton4.setBackground(new java.awt.Color(255, 51, 51));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("MONTA IL GIOCO");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 60, 20));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 220, 30));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 80, 20));
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 80, 90));
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 190, 60, 90));
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, 70, 110));
@@ -278,24 +296,20 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         jLabel17.setText("jLabel17");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 290, 100, -1));
 
-        jLabel19.setText("QUESTA E' LA QUALITA' DEL GIOCO");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel19.setText("QUALITA' DEL GIOCATTOLO CREATO");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, 20));
 
-        jLabel11.setText("SCEGLI I MACCHINARI");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
-
-        jLabel20.setText("SCEGLI I MACCHINARI");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
-
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel21.setText("NOME DEL GIOCATTOLO:");
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 70, -1));
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 570, 70, 60));
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 80, 70, 90));
         getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 190, 70, 90));
@@ -304,6 +318,7 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 570, 70, 60));
         getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 520, 80, 80));
 
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel30.setText("GIOCATTOLI GIA FATTI");
         getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, -1, -1));
 
@@ -313,14 +328,20 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 410, 240));
 
+        jButton5.setBackground(new java.awt.Color(255, 51, 51));
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("ISTRUZIONI");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 40, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
 
+        jButton6.setBackground(new java.awt.Color(255, 51, 51));
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("EVENTO CASUALE");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -329,9 +350,11 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, -1));
 
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel31.setText("EVENTO:");
         getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, -1, -1));
 
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel32.setText("SCEGLI UN EVENTO");
         getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 540, -1, -1));
 
@@ -351,21 +374,23 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
         getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 190, 90));
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/albero.png"))); // NOI18N
-        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 100, 150));
+        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 100, 150));
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/calza.png"))); // NOI18N
-        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 100, 190));
+        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 100, 190));
 
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/caramella.png"))); // NOI18N
-        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 510, 100, 210));
+        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 100, 210));
 
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crisimimis/Immagini/ghirlanda.png"))); // NOI18N
-        getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 110, 120));
+        getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 110, 120));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 100, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jLabel11.setIcon(new ImageIcon((URL)getClass().getResource(catena.materiale((String)jComboBox1.getSelectedItem()))));
         catena.mat((String)jComboBox1.getSelectedItem());
         jLabel5.setText(catena.getNomeMat());
         jButton1.setEnabled(false);
@@ -517,8 +542,8 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 break;
                 
             case FESTA:
-                if(g.qualità==180){
-                    jTextArea2.setText("GLI ELFI FANNO FESTA COME ANDRA'..."+"\nE' ANDATA BENE E SONO CONTENTI DI AVER FATTO FIESTAAA QUALITA' IMPOSTATA A 180");
+                if(g.qualità>=180){
+                    jTextArea2.setText("GLI ELFI FANNO FESTA COME ANDRA'..."+"\nE' ANDATA BENE E SONO CONTENTI DI AVER FATTO FIESTAAA QUALITA' IMPOSTATA A 180 (SE ERA MINORE)");
                     jLabel33.setIcon(new ImageIcon((URL)getClass().getResource("/crisimimis/Immagini/fiestaFelici.png")));
                 }
                 else{
@@ -592,7 +617,6 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;

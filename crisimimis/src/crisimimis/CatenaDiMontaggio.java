@@ -21,6 +21,7 @@ import javax.sound.sampled.FloatControl;
  * @author caibugatti.ruben
  */
 public class CatenaDiMontaggio {
+    private String nome;
     Materiale materiale;
     Eventi e;
     ArrayList<Elfo> elfi=new ArrayList();
@@ -30,7 +31,7 @@ public class CatenaDiMontaggio {
     private Clip clip;
     
     public CatenaDiMontaggio(){
-        
+        this.nome="FABBRICA 4D";
     }
     
     public void mat(String m){
@@ -210,7 +211,9 @@ public class CatenaDiMontaggio {
                 Random rdn=new Random();
                 int bueno=rdn.nextInt(10);
                 if(bueno<5){
-                    g.qualità=180;
+                    if(g.qualità<=180){
+                        g.qualità=180;
+                    }
                 }
                 else{
                     this.pulisciElfi();
@@ -246,5 +249,20 @@ public class CatenaDiMontaggio {
             e.printStackTrace();
         }
 
+    }
+    public String materiale(String materiale){
+        switch (materiale){
+            case "PLASTICA":
+                return "/crisimimis/Immagini/plastica.png";
+            case "LEGNO":
+                return "/crisimimis/Immagini/legno.png";
+            case "FERRO":
+                return "/crisimimis/Immagini/ferro.png";
+            case "CRISTALLODINEVE":
+                return "/crisimimis/Immagini/neve.png";
+            case "FRAMMENTOMAGICO":
+                return "/crisimimis/Immagini/magico.png";
+        }
+        return null;
     }
 }

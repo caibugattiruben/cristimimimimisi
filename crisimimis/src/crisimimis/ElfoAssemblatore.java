@@ -10,7 +10,7 @@ package crisimimis;
  */
 public class ElfoAssemblatore extends Elfo {
     public ElfoAssemblatore(){
-        super("Trivella","IGL");
+        super("Trivella");
     }
     
     

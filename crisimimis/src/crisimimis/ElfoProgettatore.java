@@ -11,7 +11,7 @@ package crisimimis;
 public class ElfoProgettatore extends Elfo {
     
     public ElfoProgettatore(){
-        super("Lleshi","yo soy Marlon");
+        super("Lleshi");
     }
         public int Progetta(Materiale m,boolean mac){
         if(m==Materiale.FRAMMENTOMAGICO){

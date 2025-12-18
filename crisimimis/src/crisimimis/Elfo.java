@@ -11,14 +11,9 @@ package crisimimis;
 public class Elfo {
     
     private String nome;
-    protected String special;
     
-    public Elfo(String n,String spe){
+    public Elfo(String n){
         this.nome=n;
-        this.special=spe;
     }
     
-    public String special(){
-        return special;
-    }
 }

@@ -11,7 +11,7 @@ package crisimimis;
 public class ElfoControllore extends Elfo {
     
     public ElfoControllore(){
-        super("Twixi","Lasciatemi andare in pensione...");
+        super("Twixi");
     }
     
     public int Controlla(int n,boolean m){
