@@ -100,6 +100,9 @@ public class PannelloDiControlloFabbrica extends javax.swing.JFrame {
                 jLabel32.setText("");
                 jTextField1.setText("");
                 jLabel33.setIcon(null);
+                jComboBox1.setSelectedIndex(0);
+                jComboBox2.setSelectedIndex(0);
+                jComboBox3.setSelectedIndex(0);
             }
             else{
                 for(int i=0;i<fermarsi.length;i++){
